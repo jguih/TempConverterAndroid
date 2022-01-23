@@ -2,15 +2,22 @@ package com.example.temperatureconverterv2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import androidx.core.widget.doAfterTextChanged
 import androidx.core.widget.doOnTextChanged
 import com.example.temperatureconverterv2.databinding.ActivityMainBinding
+import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    // Var for storing the currentInput
     private var currentInput: Float? = null
-    private val t = TempConverter()
+    // This DecimalFormat determines how all the float numbers will be formatted
+    private val floatFormat = DecimalFormat("#.##")
+    private val t = TempConverter(floatFormat)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         // Create listeners for each text input
         //   Celsius listener
-        binding.celsiusTextInput.doOnTextChanged { text, start, before, count ->
+        binding.celsiusTextInput.doAfterTextChanged { _ ->
             if(binding.celsiusTextInput.hasFocus()) {
                 Log.d("focus","celsiusTextInput has focus")
                 // Gets the current input
@@ -29,13 +36,13 @@ class MainActivity : AppCompatActivity() {
                 binding.fahrenheitTextInput.text?.clear()
                 if(currentInput != null) {
                     // Convert the current Celsius input to Fahrenheit and Kelvin and insert them
-                    binding.fahrenheitTextInput.text?.insert(0, t.convertCtoF(currentInput!!).toString())
-                    binding.kelvinTextInput.text?.insert(0, t.convertCtoK(currentInput!!).toString())
+                    binding.fahrenheitTextInput.text?.insert(0, t.convertCtoF(currentInput!!))
+                    binding.kelvinTextInput.text?.insert(0, t.convertCtoK(currentInput!!))
                 }
             }
         }
         //   Fahrenheit listener
-        binding.fahrenheitTextInput.doOnTextChanged { text, start, before, count ->
+        binding.fahrenheitTextInput.doAfterTextChanged { _ ->
             if(binding.fahrenheitTextInput.hasFocus()) {
                 Log.d("focus","fahrenheitTextInput has focus")
                 // Gets the current input
@@ -45,13 +52,13 @@ class MainActivity : AppCompatActivity() {
                 binding.kelvinTextInput.text?.clear()
                 if(currentInput != null) {
                     // Convert the current Fahrenheit input to Celsius and Kelvin and insert them
-                    binding.celsiusTextInput.text?.insert(0, t.convertFtoC(currentInput!!).toString())
-                    binding.kelvinTextInput.text?.insert(0, t.convertFtoK(currentInput!!).toString())
+                    binding.celsiusTextInput.text?.insert(0, t.convertFtoC(currentInput!!))
+                    binding.kelvinTextInput.text?.insert(0, t.convertFtoK(currentInput!!))
                 }
             }
         }
         //   Kelvin listener
-        binding.kelvinTextInput.doOnTextChanged { text, start, before, count ->
+        binding.kelvinTextInput.doAfterTextChanged { _ ->
             if(binding.kelvinTextInput.hasFocus()) {
                 Log.d("focus","kelvinTextInput has focus")
                 // Gets the current input
@@ -61,8 +68,8 @@ class MainActivity : AppCompatActivity() {
                 binding.fahrenheitTextInput.text?.clear()
                 if(currentInput != null) {
                     // Convert the current Fahrenheit input to Celsius and Kelvin and insert them
-                    binding.celsiusTextInput.text?.insert(0, t.convertKtoC(currentInput!!).toString())
-                    binding.fahrenheitTextInput.text?.insert(0, t.convertKtoF(currentInput!!).toString())
+                    binding.celsiusTextInput.text?.insert(0, t.convertKtoC(currentInput!!))
+                    binding.fahrenheitTextInput.text?.insert(0, t.convertKtoF(currentInput!!))
                 }
             }
         }

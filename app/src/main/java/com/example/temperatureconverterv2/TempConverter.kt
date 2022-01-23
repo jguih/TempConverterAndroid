@@ -1,51 +1,49 @@
 package com.example.temperatureconverterv2
 
 import android.util.Log
-import java.math.RoundingMode
+import java.text.DecimalFormat
 
-class TempConverter {
+class TempConverter(private val floatFormat: DecimalFormat) {
     // This class implements all methods that converts temperatures
     //   The returned Float values gets formatted based on input's number of decimal values
 
-    private fun tempFormatter(convertedTemp: Float, input: Float): Float {
-        // Format the converted Float value based on decimal values on user's input
-        return convertedTemp
-            .toBigDecimal().setScale(input.toBigDecimal().scale(), RoundingMode.HALF_EVEN).toFloat()
+    private fun tempFormatter(convertedTemp: Float): String {
+        return floatFormat.format(convertedTemp)
     }
 
-    fun convertKtoF(input: Float): Float {
+    fun convertKtoF(input: Float): String {
         Log.d("convert","converting K to F")
         // Converts Kelvin to Fahrenheit
-        return tempFormatter((input - 273.15f) * 9f/5 + 32, input)
+        return tempFormatter((input - 273.15f) * 9f/5 + 32)
     }
 
-    fun convertKtoC(input: Float): Float {
+    fun convertKtoC(input: Float): String {
         Log.d("convert","converting K to C")
         // Converts Kelvin to Celsius
-        return tempFormatter(input - 273.15f, input)
+        return tempFormatter(input - 273.15f)
     }
 
-    fun convertCtoF(input: Float): Float {
+    fun convertCtoF(input: Float): String {
         Log.d("convert","converting C to F")
         // Converts Celsius to Fahrenheit
-        return tempFormatter((input * 9f/5) + 32, input)
+        return tempFormatter((input * 9f/5) + 32)
     }
 
-    fun convertCtoK(input: Float): Float {
+    fun convertCtoK(input: Float): String {
         Log.d("convert","converting C to K")
         // Converts Celsius to Kelvin
-        return tempFormatter(input + 273.15f, input)
+        return tempFormatter(input + 273.15f)
     }
 
-    fun convertFtoK(input: Float): Float {
+    fun convertFtoK(input: Float): String {
         Log.d("convert","converting F to K")
         // Converts Fahrenheit to Kelvin
-        return tempFormatter((input - 32) * (5f/9) + 273.15f, input)
+        return tempFormatter((input - 32) * (5f/9) + 273.15f)
     }
 
-    fun convertFtoC(input: Float): Float {
+    fun convertFtoC(input: Float): String {
         Log.d("convert","converting F to C")
         // Converts Fahrenheit and Celsius
-        return tempFormatter((input - 32) * (5f/9), input)
+        return tempFormatter((input - 32) * (5f/9))
     }
 }
