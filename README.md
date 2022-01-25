@@ -5,13 +5,13 @@
 </p>
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/62079543/150990851-f1f5c9b8-d5b7-4abe-adbf-dbad01a6914e.jpg" width="600" height="300"/>
+<img src="/media/TC_landscape.jpg" width="600" height="300"/>
 </p>
 
 ##
 
 </br>
-<img src="https://user-images.githubusercontent.com/62079543/150904063-fdd201ed-fc9f-42fe-b201-501e34b8192d.gif" align="right" width="300" height="600"/>
+<img src="/media/TC.gif" align="right" width="300" height="600"/>
 
 ## About this project
 
