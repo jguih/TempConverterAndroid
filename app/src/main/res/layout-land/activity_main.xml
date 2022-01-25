@@ -8,99 +8,102 @@
     tools:context=".MainActivity">
 
     <TextView
-        style="@style/TemperatureConverter.Body1"
         android:id="@+id/celsius_text_view"
+        style="@style/TemperatureConverter.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/celsius"
-        android:layout_marginEnd="@dimen/text_view_margin"
-        app:layout_constraintBottom_toBottomOf="@+id/celsius_text_layout"
-        app:layout_constraintEnd_toStartOf="@+id/celsius_text_layout"
-        app:layout_constraintTop_toTopOf="@+id/celsius_text_layout" />
+        app:layout_constraintBottom_toTopOf="@+id/celsius_text_layout"
+        app:layout_constraintEnd_toEndOf="@+id/celsius_text_layout"
+        app:layout_constraintStart_toStartOf="@+id/celsius_text_layout"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/celsius_text_layout"
         android:layout_width="@dimen/text_input_layout_width"
         android:layout_height="wrap_content"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/text_input_layout_marginTop_land"
+        app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/fahrenheit_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/fahrenheit_text_layout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/celsius_text_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:expandedHintEnabled="false"
         app:suffixText="°C">
 
         <!-- android:imeOptions="flagNoExtractUi" makes the keyboard not take
              the whole screen when in landscape mode -->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/celsius_text_input"
-            android:imeOptions="flagNoExtractUi"
-            android:inputType="numberDecimal|numberSigned"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="numberDecimal|numberSigned" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        style="@style/TemperatureConverter.Body1"
         android:id="@+id/fahrenheit_text_view"
-        android:layout_marginEnd="@dimen/text_view_margin"
-        android:text="@string/fahrenheit"
+        style="@style/TemperatureConverter.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/fahrenheit_text_layout"
-        app:layout_constraintEnd_toStartOf="@+id/fahrenheit_text_layout"
-        app:layout_constraintTop_toTopOf="@+id/fahrenheit_text_layout" />
+        android:text="@string/fahrenheit"
+        app:layout_constraintBottom_toTopOf="@+id/fahrenheit_text_layout"
+        app:layout_constraintEnd_toEndOf="@+id/fahrenheit_text_layout"
+        app:layout_constraintStart_toStartOf="@+id/fahrenheit_text_layout" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fahrenheit_text_layout"
         android:layout_width="@dimen/text_input_layout_width"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_input_layout_margin"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/celsius_text_layout"
+        android:layout_marginTop="@dimen/text_input_layout_marginTop_land"
         app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/kelvin_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/kelvin_text_layout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/celsius_text_layout"
+        app:layout_constraintTop_toTopOf="parent"
         app:suffixText="F">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fahrenheit_text_input"
-            android:imeOptions="flagNoExtractUi"
-            android:inputType="numberDecimal|numberSigned"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="numberDecimal|numberSigned" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        style="@style/TemperatureConverter.Body1"
         android:id="@+id/kelvin_text_view"
+        style="@style/TemperatureConverter.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/text_view_margin"
         android:text="@string/kelvin"
-        app:layout_constraintBottom_toBottomOf="@+id/kelvin_text_layout"
-        app:layout_constraintEnd_toStartOf="@+id/kelvin_text_layout"
-        app:layout_constraintTop_toTopOf="@+id/kelvin_text_layout" />
+        app:layout_constraintBottom_toTopOf="@+id/kelvin_text_layout"
+        app:layout_constraintEnd_toEndOf="@+id/kelvin_text_layout"
+        app:layout_constraintStart_toStartOf="@+id/kelvin_text_layout" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/kelvin_text_layout"
         android:layout_width="@dimen/text_input_layout_width"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_input_layout_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fahrenheit_text_layout"
+        android:layout_marginTop="@dimen/text_input_layout_marginTop_land"
         app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fahrenheit_text_layout"
+        app:layout_constraintTop_toTopOf="parent"
         app:suffixText="K">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/kelvin_text_input"
-            android:imeOptions="flagNoExtractUi"
-            android:inputType="numberDecimal|numberSigned"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="numberDecimal|numberSigned" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

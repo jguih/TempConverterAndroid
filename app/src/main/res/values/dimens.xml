@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_margin">5dp</dimen>
-    <dimen name="text_layout_margin">10dp</dimen>
-    <dimen name="text_layout_width">120dp</dimen>
+    <!-- Portrait mode dimens -->
+    <dimen name="text_view_margin">5dp</dimen>
+    <dimen name="text_input_layout_margin">10dp</dimen>
+    <dimen name="text_input_layout_width">120dp</dimen>
+    <!-- Landscape mode dimens -->
+    <dimen name="text_input_layout_marginTop_land">15dp</dimen>
 </resources>
