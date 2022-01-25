@@ -30,8 +30,8 @@
         app:suffixText="°C">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:inputType="numberDecimal|numberSigned"
             android:id="@+id/celsius_text_input"
+            android:inputType="numberDecimal|numberSigned"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -61,8 +61,8 @@
         app:suffixText="F">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:inputType="numberDecimal|numberSigned"
             android:id="@+id/fahrenheit_text_input"
+            android:inputType="numberDecimal|numberSigned"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -92,8 +92,8 @@
         app:suffixText="K">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:inputType="numberDecimal|numberSigned"
             android:id="@+id/kelvin_text_input"
+            android:inputType="numberDecimal|numberSigned"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

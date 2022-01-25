@@ -2,6 +2,7 @@ package com.example.temperatureconverterv2
 
 import android.util.Log
 import java.text.DecimalFormat
+import java.text.NumberFormat
 
 class TempConverter(private val floatFormat: DecimalFormat) {
     // This class implements all methods that converts temperatures

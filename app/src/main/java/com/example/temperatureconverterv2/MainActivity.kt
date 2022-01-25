@@ -9,6 +9,9 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.core.widget.doOnTextChanged
 import com.example.temperatureconverterv2.databinding.ActivityMainBinding
 import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
+import java.text.NumberFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     // Var for storing the currentInput
     private var currentInput: Float? = null
     // This DecimalFormat determines how all the float numbers will be formatted
-    private val floatFormat = DecimalFormat("#.##")
+    private val floatFormat = DecimalFormat("#.##", DecimalFormatSymbols(Locale.US))
     private val t = TempConverter(floatFormat)
 
     override fun onCreate(savedInstanceState: Bundle?) {
