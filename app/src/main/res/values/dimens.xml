@@ -6,4 +6,5 @@
     <dimen name="text_input_layout_width">120dp</dimen>
     <!-- Landscape mode dimens -->
     <dimen name="text_input_layout_marginTop_land">15dp</dimen>
+    <dimen name="text_input_layout_marginEnd_land">10dp</dimen>
 </resources>
